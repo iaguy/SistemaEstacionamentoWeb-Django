@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movimento Mensalista</title>
+</head>
+<body>
+
+<h1>Lista de Movimento Mensalista</h1>
+
+{% for mov in mov_mensa %}
+
+<li> {{mov.mensalista}} - {{mov.dt_pgto}}</li>
+
+{%endfor%}
+
+
+</body>
+</html>

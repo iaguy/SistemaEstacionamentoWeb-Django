@@ -28,7 +28,7 @@ class MovRotativoForm(ModelForm):
 
 class MensalistaForm(ModelForm):
     class Meta:
-        model =Mensalista
+        model = Mensalista
         fields = '__all__'
 
 

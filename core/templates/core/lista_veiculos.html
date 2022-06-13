@@ -10,7 +10,7 @@
 <ul>
 {% for veiculo in veiculos %}
 
-<li> {{veiculo.placa}} - {{veiculo.proprietario}} </li>
+    <li> <a href="{% url 'core_veiculo_update' veiculo.id %}"> {{veiculo.placa}} </a> </li>
 
 {%endfor%}
 </ul>

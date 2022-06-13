@@ -60,7 +60,7 @@ class Mensalista(models.Model):
     valor_mes = models.DecimalField(max_digits=6, decimal_places=2)
 
     def __str__(self):
-        return self.veiculo + ' - ' + self.inicio
+        return str(self.veiculo) + ' - ' + str(self.inicio)
 
 
 class MovMensalista(models.Model):
@@ -69,4 +69,4 @@ class MovMensalista(models.Model):
     total = models.DecimalField(max_digits=6, decimal_places=2)
 
     def __str__(self):
-        return self.mensalista + ' - ' + self.total
+        return str(self.mensalista) + ' - ' + str(self.total)

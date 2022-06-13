@@ -10,7 +10,7 @@
 <ul>
 {% for mensa in mensalistas %}
 
-<li> {{mensa.veiculo}} - {{mensa.placa}}</li>
+<li> <a href="{% url 'core_mensalistas_update' mensa.id%}">{{mensa.veiculo}} - {{mensa.placa}}</a></li>
 
 {%endfor%}
 </ul>

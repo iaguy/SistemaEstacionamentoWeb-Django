@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Veiculos</title>
+</head>
+<body>
+
+<h2>Atualizando Veiculo: {{ veiculo }}</h2>
+
+<form action="{% url 'core_veiculo_update' veiculo.id %}" method="POST">
+    {% csrf_token %}
+
+    {{form.as_p}}
+
+    <button type="submit">Salvar</button>
+
+</body>
+</html>

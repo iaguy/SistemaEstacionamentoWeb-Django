@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7d0acfe1-9a90-4d51-9ac5-1a2570c6547a" name="Changes" comment="" />
+    <list default="true" id="7d0acfe1-9a90-4d51-9ac5-1a2570c6547a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/core/templates/core/update_mensalistas.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/templates/core/update_movmensalistas.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/templates/core/update_movrotativo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/templates/core/update_veiculo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/core/lista_mensalista.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/core/lista_mensalista.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/core/lista_movmensalista.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/core/lista_movmensalista.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/core/lista_movrotativos.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/core/lista_movrotativos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/core/lista_veiculos.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/core/lista_veiculos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,14 +44,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

@@ -10,7 +10,7 @@
 <ul>
 {% for mov in mov_rota %}
 
-<li> {{mov.veiculo.placa}} - {{mov.veiculo.marca}} - {{mov.checkin}} </li>
+    <li> <a href="{% url 'core_movrotativos_update' mov.id %}">{{mov.veiculo.placa}} - {{mov.checkin}}</a> </li>
 
 {%endfor%}
 </ul>

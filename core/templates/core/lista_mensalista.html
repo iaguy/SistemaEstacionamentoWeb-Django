@@ -8,9 +8,9 @@
 
 <h1>Lista de Mensalista</h1>
 <ul>
-{% for mensa in mensalistas %}
+{% for mensalista in mensalistas %}
 
-<li> <a href="{% url 'core_mensalistas_update' mensa.id%}">{{mensa.veiculo}} - {{mensa.placa}}</a></li>
+<li> <a href="{% url 'core_mensalistas_update' mensalista.id%}">{{mensalista.veiculo}} - {{mensalista.placa}}</a></li>
 
 {%endfor%}
 </ul>

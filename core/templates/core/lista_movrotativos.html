@@ -7,12 +7,23 @@
 <body>
 
 <h1>Lista de Movimentos Rotativos</h1>
-
+<ul>
 {% for mov in mov_rota %}
 
-<li> {{mov.veiculo.placa}} - {{mov.checkin}} </li>
+<li> {{mov.veiculo.placa}} - {{mov.veiculo.marca}} - {{mov.checkin}} </li>
 
 {%endfor%}
+</ul>
+
+<form action="{% url 'core_movrotativos_novo' %}" method="POST">
+    {% csrf_token %}
+
+    {{form.as_p}}
+
+    <button type="submit">Confirmar</button>
+
+</form>
+
 
 
 </body>

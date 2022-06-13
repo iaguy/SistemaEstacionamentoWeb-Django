@@ -48,7 +48,7 @@ class MovRotativo(models.Model):
         return math.ceil((self.checkout - self.checkin).total_seconds() / 3600)
 
     def total(self):
-        return str(self.valor_hora) * self.horas_total()
+        return self.valor_hora * self.horas_total()
 
     def __str__(self):
         return self.veiculo.placa
@@ -60,7 +60,7 @@ class Mensalista(models.Model):
     valor_mes = models.DecimalField(max_digits=6, decimal_places=2)
 
     def __str__(self):
-        return str(self.veiculo) + ' - ' + str(self.inicio)
+        return self.veiculo + ' - ' + self.inicio
 
 
 class MovMensalista(models.Model):
@@ -69,4 +69,4 @@ class MovMensalista(models.Model):
     total = models.DecimalField(max_digits=6, decimal_places=2)
 
     def __str__(self):
-        return str(self.mensalista) + ' - ' + str(self.total)
+        return self.mensalista + ' - ' + self.total

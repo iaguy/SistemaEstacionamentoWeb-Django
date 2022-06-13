@@ -8,12 +8,22 @@
 
 <h1>Lista de Movimento Mensalista</h1>
 
+<ul>
 {% for mov in mov_mensa %}
 
 <li> {{mov.mensalista}} - {{mov.dt_pgto}}</li>
 
 {%endfor%}
+</ul>
 
+<form action="{% url 'core_movmensalista_novo' %}" method="POST">
+    {% csrf_token %}
+
+    {{form.as_p}}
+
+    <button type="submit">Confirmar</button>
+
+</form>
 
 </body>
 </html>

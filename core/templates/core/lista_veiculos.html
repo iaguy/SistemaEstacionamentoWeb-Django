@@ -7,13 +7,22 @@
 <body>
 
 <h1>Lista de Veiculos</h1>
-
+<ul>
 {% for veiculo in veiculos %}
 
-<li> {{veiculo.placa}} </li>
+<li> {{veiculo.placa}} - {{veiculo.proprietario}} </li>
 
 {%endfor%}
+</ul>
 
+<form action="{% url 'core_veiculo_novo' %}" method="POST">
+    {% csrf_token %}
+
+    {{form.as_p}}
+
+    <button type="submit">Confirmar</button>
+
+</form>
 
 
 </body>

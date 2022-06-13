@@ -7,13 +7,23 @@
 <body>
 
 <h1>Lista de Mensalista</h1>
-
+<ul>
 {% for mensa in mensalistas %}
 
 <li> {{mensa.veiculo}} - {{mensa.placa}}</li>
 
 {%endfor%}
+</ul>
 
+
+<form action="{% url 'core_mensalistas_novo' %}" method="POST">
+    {% csrf_token %}
+
+    {{form.as_p}}
+
+    <button type="submit">Confirmar</button>
+
+</form>
 
 </body>
 </html>

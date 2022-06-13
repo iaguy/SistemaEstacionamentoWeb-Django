@@ -1,4 +1,5 @@
-from django.shortcuts import render,redirect
+
+from django.shortcuts import render,redirect,HttpResponsePermanentRedirect
 from .models import (
     Pessoa,
     Veiculo,
@@ -40,13 +41,12 @@ def pessoa_update(request, id):
     form = PessoaForm(request.POST or None, instance=pessoa)
     data['pessoa'] = pessoa
     data['form'] = form
-
     if request.method == 'POST':
         if form.is_valid():
             form.save()
             return redirect('core_lista_pessoas')
-        else:
-            return render(request, 'core/update_pessoa.html', data)
+    else:
+        return render(request, 'core/update_pessoa.html' , data)
 
 
 def lista_veiculos(request):

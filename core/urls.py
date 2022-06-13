@@ -39,5 +39,5 @@ urlpatterns = [
 
     path('mov-mensalistas/', lista_movmensalista, name='core_lista_movmensalistas'),
     path('mov-mensal-novo/', movmensalista_novo, name='core_movmensalista_novo'),
-    path('mov-mensal-update/<int:id>/', movmensalista_update, name='core_movmensalista_update'),
+    path('mov-mensal-update/<int:id>/', movmensalista_update, name='core_movmensalistas_update'),
 ]

@@ -85,6 +85,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="criação do app e erro no update pessoa" />
-    <option name="LAST_COMMIT_MESSAGE" value="criação do app e erro no update pessoa" />
+    <MESSAGE value="update nas aplicações com erro na mov mensalista" />
+    <option name="LAST_COMMIT_MESSAGE" value="update nas aplicações com erro na mov mensalista" />
   </component>
 </project>

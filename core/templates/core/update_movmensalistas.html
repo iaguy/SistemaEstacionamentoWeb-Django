@@ -2,17 +2,17 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>Atualizando Movimento Mensalista</title>
 </head>
 <body>
-<h2>Atualizando MovMensalistas: {{mov_mensa}}</h2>
+<h2>Atualizando MovMensalistas: {{ mov_mensalistas }}</h2>
 
-<form action="{% url 'core_movmensalista_update' mov_mensalista.id%}" method="POST">
-    {% csrf_token %}
+<form action="{% url 'core_movmensalistas_update' mov_mensalistas.id %}" method="POST">
+  {% csrf_token %}
 
-    {{form.as_p}}
+  {{form.as_p}}
 
-    <button type="submit">Salvar</button>
+  <button type="submit">Salvar</button>
 </form>
 </body>
 </html>

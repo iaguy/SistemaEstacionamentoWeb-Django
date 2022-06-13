@@ -148,9 +148,9 @@ def movmensalista_novo(request):
 
 def movmensalista_update(request, id):
     data = {}
-    movmensalsitas = MovMensalista.objects.get(id=id)
-    form = MovMensalistaForm(request.POST or None, instance=movmensalsitas)
-    data['movmensalsitas'] = movmensalsitas
+    mov_mensalistas = MovMensalista.objects.get(id=id)
+    form = MovMensalistaForm(request.POST or None, instance=mov_mensalistas)
+    data['mov_mensalistas'] = mov_mensalistas
     data['form'] = form
     if request.method == 'POST':
         if form.is_valid():

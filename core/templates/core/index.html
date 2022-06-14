@@ -14,10 +14,21 @@
             <li><a class="dropdown-item" href="{% url 'core_lista_movmensalistas' %}">MovMensalistas</a></li>
             <li><a class="dropdown-item" href="{% url 'core_lista_movrotativos' %}">MovRotativo</a></li>
         </ul>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="#">Logout</a>
-        </li>
+
+        {% if user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Olá, {{ user }}</a>
+            </li>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+            </li>
+        {% else %}
+            </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">Login</a>
+                </li>
+        {% endif %}
     </ul>
 {% endblock menu %}
 
@@ -25,7 +36,6 @@
 <div class="row">
     <div class="col">
         <h1>Sejam Bem Vindos</h1>
-        <a href="/admin/login/?next=/admin/">Clique aqui para login</a>
     </div>
 </div>
 {% endblock %}

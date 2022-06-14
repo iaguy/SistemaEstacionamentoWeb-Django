@@ -3,10 +3,10 @@
 {% block menu %}
     <ul class="nav nav-tabs">
         <li class="nav-item">
-        <a class="nav-link" aria-current="page" href="{% url 'core_home' %}">Home</a>
+        <a class="nav-link active" aria-current="page" href="{% url 'core_home' %}">Home</a>
         </li>
         <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Menu</a>
+        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Menu</a>
         <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="{% url 'core_lista_pessoas' %}">Pessoas</a></li>
             <li><a class="dropdown-item" href="{% url 'core_lista_veiculos' %}">Veiculos</a></li>
@@ -14,10 +14,21 @@
             <li><a class="dropdown-item" href="{% url 'core_lista_movmensalistas' %}">MovMensalistas</a></li>
             <li><a class="dropdown-item active" href="{% url 'core_lista_movrotativos' %}">MovRotativo</a></li>
         </ul>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="#">Logout</a>
-        </li>
+
+        {% if user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Olá, {{ user }}</a>
+            </li>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+            </li>
+        {% else %}
+            </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">Login</a>
+                </li>
+        {% endif %}
     </ul>
 {% endblock menu %}
 {% block main %}
@@ -47,18 +58,18 @@
                   <th scope="col">Chekin</th>
                   <th scope="col">Checkout</th>
                   <th scope="col">Valor Hora</th>
-                  <th scope="col">Pago</th>
+                  <th scope="col">Total</th>
                 </tr>
               </thead>
               <tbody>
                   {% for mov in mov_rota %}
                       <tr>
                           <th scope="row">{{mov.id}}</th>
-                          <th scope="row">{{mov.veiculo}}</th>
+                          <th scope="row"><a href="{% url 'core_movrotativos_update' mov.id%}">{{mov.veiculo}}</a></th>
                           <td scope="row">{{mov.checkin}}</td>
                           <td scope="row">{{mov.checkout}}</td>
                           <td scope="row">{{mov.valor_hora}}</td>
-                          <td scope="row">{{mov.pago}}</td>
+                          <td scope="row">{{mov.total}}</td>
                       </tr>
                   {% endfor %}
               </tbody>

@@ -1,0 +1,21 @@
+td a{
+    text-decoration: none;
+    color: unset;
+}
+
+td a:hover{
+    color: rgb(0, 0, 0);
+    background-color: aquamarine;
+    border-radius: 5px;
+}
+
+th a{
+    text-decoration: none;
+    color: unset;
+}
+
+th a:hover{
+    color: rgb(0, 0, 0);
+    background-color: aquamarine;
+    border-radius: 5px;
+}

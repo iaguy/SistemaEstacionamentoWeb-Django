@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load bootstrap %}
 {% block main %}
     <!DOCTYPE html>
     <html lang="pt-br">
@@ -8,26 +8,21 @@
         <title>Lista Veiculos</title>
     </head>
     <body>
-
-    <h1>Lista de Veiculos</h1>
-
-    <ul>
-    {% for veiculo in veiculos %}
-
-        <li> <a href="{% url 'core_veiculo_update' veiculo.id %}"> {{veiculo.placa}} </a> </li>
-
-    {%endfor%}
-    </ul>
-
-    <form action="{% url 'core_veiculo_novo' %}" method="POST">
-        {% csrf_token %}
-
-        {{form.as_p}}
-
-        <button type="submit">Confirmar</button>
-
-    </form>
-
+    <div class="row">
+        <div class="col">
+            <h1>Lista de Veiculos</h1>
+            <ul>
+                {% for veiculo in veiculos %}
+                    <li> <a href="{% url 'core_veiculo_update' veiculo.id %}"> {{veiculo.placa}} </a> </li>
+                {%endfor%}
+            </ul>
+            <form action="{% url 'core_veiculo_novo' %}" method="POST">
+                {% csrf_token %}
+                {{ form|bootstrap }}
+                <button type="submit" class="btn btn-dark">Confirmar</button>
+            </form>
+        </div>
+    </div>
     </body>
     </html>
 {% endblock %}

@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load bootstrap %}
 {% block main %}<!DOCTYPE html>
     <html lang="pt-br">
     <head>
@@ -7,28 +7,25 @@
         <title>Movimento Mensalista</title>
     </head>
     <body>
-
-    <h1>Lista de Movimento Mensalista</h1>
-
-    <ul>
-    {% for mov in mov_mensalista %}
-    <li>
-    <a href="{% url 'core_movmensalistas_update' mov.id %}">
-        {{mov.mensalista}} - {{mov.dt_pgto}}
-        </a>
-    </li>
-    {%endfor%}
-    </ul>
-
-    <form action="{% url 'core_movmensalista_novo' %}" method="POST">
-        {% csrf_token %}
-
-        {{form.as_p}}
-
-        <button type="submit">Confirmar</button>
-
-    </form>
-
+    <div class="row">
+        <div class="col">
+            <h1>Lista de Movimento Mensalista</h1>
+            <ul>
+                {% for mov in mov_mensalista %}
+                    <li>
+                        <a href="{% url 'core_movmensalistas_update' mov.id %}">
+                        {{mov.mensalista}} - {{mov.dt_pgto}}
+                        </a>
+                    </li>
+                {%endfor%}
+            </ul>
+            <form action="{% url 'core_movmensalista_novo' %}" method="POST">
+                {% csrf_token %}
+                {{ form|bootstrap }}
+                <button type="submit" class="btn btn-dark">Confirmar</button>
+            </form>
+        </div>
+    </div>
     </body>
     </html>
 {% endblock %}

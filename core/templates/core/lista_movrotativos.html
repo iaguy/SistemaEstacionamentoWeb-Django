@@ -1,5 +1,25 @@
 {% extends 'base.html' %}
 {% load bootstrap %}
+{% block menu %}
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="{% url 'core_home' %}">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Menu</a>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{% url 'core_lista_pessoas' %}">Pessoas</a></li>
+            <li><a class="dropdown-item" href="{% url 'core_lista_veiculos' %}">Veiculos</a></li>
+            <li><a class="dropdown-item" href="{% url 'core_lista_mensalistas' %}">Mensalistas</a></li>
+            <li><a class="dropdown-item" href="{% url 'core_lista_movmensalistas' %}">MovMensalistas</a></li>
+            <li><a class="dropdown-item" href="{% url 'core_lista_movrotativos' %}">MovRotativo</a></li>
+        </ul>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="#">Logout</a>
+        </li>
+    </ul>
+{% endblock menu %}
 {% block main %}
   <!DOCTYPE html>
   <html lang="pt-br">
@@ -15,7 +35,7 @@
           {% for mov in mov_rota %}
               <li>
                 <a href="{% url 'core_movrotativos_update' mov.id %}">
-                  {{mov.veiculo.placa}} - {{mov.checkin}}
+                  {{mov.veiculo.placa}} - {{mov.checkin}} - {{mov.checkout}} - {{mov.total}}
                 </a>
              </li>
           {%endfor%}

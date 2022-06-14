@@ -1,20 +1,24 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Update Pessoa</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-<h2>Atualizando Pessoa: {{ pessoa }}</h2>
+{% block main %}
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Update Pessoa</title>
+    </head>
+    <body>
 
-<form action="{% url 'core_pessoa_update' pessoa.id %}" method="POST">
-    {% csrf_token %}
+    <h2>Atualizando Pessoa: {{ pessoa }}</h2>
 
-    {{form.as_p}}
+    <form action="{% url 'core_pessoa_update' pessoa.id %}" method="POST">
+        {% csrf_token %}
 
-    <button type="submit">Salvar</button>
-</form>
-<a href="{% url 'core_pessoa_delete' pessoa.id%}">Deletar</a>
-</body>
-</html>
+        {{form.as_p}}
+
+        <button type="submit">Salvar</button>
+    </form>
+    <a href="{% url 'core_pessoa_delete' pessoa.id%}">Deletar</a>
+    </body>
+    </html>
+{% endblock %}

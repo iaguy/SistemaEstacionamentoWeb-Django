@@ -1,16 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Delete</title>
-</head>
-<body>
-<h2>Tem certeza que deseja deletar {{ obj }}</h2>
+{% extends 'base.html' %}
 
-<form method="POST">
-        {% csrf_token %}
-    <button type="submit">Deletar</button>
-</form>
+{% block main %}
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Delete</title>
+    </head>
+    <body>
+    <h2>Tem certeza que deseja deletar {{ obj }}</h2>
 
-</body>
-</html>
+    <form method="POST">
+            {% csrf_token %}
+        <button type="submit">Deletar</button>
+    </form>
+
+    </body>
+    </html>
+{% endblock %}

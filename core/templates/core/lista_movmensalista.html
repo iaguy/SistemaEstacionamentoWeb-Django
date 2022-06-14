@@ -27,25 +27,38 @@
         <title>Movimento Mensalista</title>
     </head>
     <body>
-    <div class="row">
-        <div class="col">
-            <h1>Lista de Movimento Mensalista</h1>
-            <ul>
-                {% for mov in mov_mensalista %}
-                    <li>
-                        <a href="{% url 'core_movmensalistas_update' mov.id %}">
-                        {{mov.mensalista}} - {{mov.dt_pgto}}
-                        </a>
-                    </li>
-                {%endfor%}
-            </ul>
-            <form action="{% url 'core_movmensalista_novo' %}" method="POST">
-                {% csrf_token %}
-                {{ form|bootstrap }}
-                <button type="submit" class="btn btn-dark">Confirmar</button>
-            </form>
-        </div>
-    </div>
+        <div class="row">
+            <div class="col-sm-6">   
+                <h1>Cadastro De Movimento Mensalista</h1>
+                <form action="{% url 'core_movmensalista_novo'%}" method="POST">
+                    {% csrf_token %}
+                    {{ form|bootstrap }}
+                    <button type="submit" class="btn btn-dark">Confirmar</button>
+                </form>
+            </div>
+            <div class="col-sm-6">   
+                <h1>Lista Movimento Mensalista</h1>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Veiculo</th>
+                        <th scope="col">Inicio</th>
+                        <th scope="col">Valor</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        {% for mensa in mov_mensalista %}
+                            <tr>
+                                <th scope="row">{{mensa.id}}</th>
+                                <th scope="row">{{mensa.mensalista}}</th>
+                                <td scope="row">{{mensa.dt_pgto}}</td>
+                                <td scope="row">{{mensa.total}}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                  </table>
+            </div>
     </body>
     </html>
 {% endblock %}

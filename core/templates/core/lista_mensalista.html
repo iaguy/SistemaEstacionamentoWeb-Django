@@ -29,24 +29,37 @@
 </head>
 <body>
   <div class="row">
-    <div class="col">
-      <h1>Lista de Mensalista</h1>
-      <ul>
-      {% for mensalista in mensalistas %}
-        <li>
-          <a href="{% url 'core_mensalistas_update' mensalista.id%}">
-            {{mensalista.veiculo}} - {{mensalista.placa}}
-          </a>
-        </li>
-      {%endfor%}
-      </ul>
-      <form action="{% url 'core_mensalistas_novo' %}" method="POST">
-        {% csrf_token %}
-        {{ form|bootstrap }}
-        <button type="submit" class="btn btn-dark">Confirmar</button>
-      </form>
+    <div class="col-sm-6">   
+        <h1>Cadastro De Clientes Mensalista</h1>
+        <form action="{% url 'core_mensalistas_novo'%}" method="POST">
+            {% csrf_token %}
+            {{ form|bootstrap }}
+            <button type="submit" class="btn btn-dark">Confirmar</button>
+        </form>
     </div>
-  </div>
+    <div class="col-sm-6">   
+        <h1>Lista Clientes Mensalista</h1>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Veiculo</th>
+                <th scope="col">Inicio</th>
+                <th scope="col">Valor</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for mensalista in mensalistas %}
+                    <tr>
+                        <th scope="row">{{mensalista.id}}</th>
+                        <th scope="row">{{mensalista.veiculo}}</th>
+                        <td scope="row">{{mensalista.inicio}}</td>
+                        <td scope="row">{{mensalista.valor_mes}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+          </table>
+    </div>
 </body>
 </html>
 {% endblock %}

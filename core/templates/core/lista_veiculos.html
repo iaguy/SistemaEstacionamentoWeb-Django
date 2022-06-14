@@ -28,21 +28,38 @@
         <title>Lista Veiculos</title>
     </head>
     <body>
-    <div class="row">
-        <div class="col">
-            <h1>Lista de Veiculos</h1>
-            <ul>
-                {% for veiculo in veiculos %}
-                    <li> <a href="{% url 'core_veiculo_update' veiculo.id %}"> {{veiculo.placa}} </a> </li>
-                {%endfor%}
-            </ul>
-            <form action="{% url 'core_veiculo_novo' %}" method="POST">
-                {% csrf_token %}
-                {{ form|bootstrap }}
-                <button type="submit" class="btn btn-dark">Confirmar</button>
-            </form>
-        </div>
-    </div>
+        <div class="row">
+            <div class="col-sm-6">   
+                <h1>Cadastro De Veiculos</h1>
+                <form action="{% url 'core_veiculo_novo'%}" method="POST">
+                    {% csrf_token %}
+                    {{ form|bootstrap }}
+                    <button type="submit" class="btn btn-dark">Confirmar</button>
+                </form>
+            </div>
+            <div class="col-sm-6">   
+                <h1>Lista Veiculos</h1>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Marca</th>
+                        <th scope="col">Placa</th>
+                        <th scope="col">Proprietario</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        {% for veiculo in veiculos %}
+                            <tr>
+                                <th scope="row">{{veiculo.id}}</th>
+                                <td>{{veiculo.marca}}</td>
+                                <td>{{veiculo.placa}}</td>
+                                <td>{{veiculo.proprietario}}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                  </table>
+            </div>
     </body>
     </html>
 {% endblock %}

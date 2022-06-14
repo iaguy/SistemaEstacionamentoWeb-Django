@@ -1,10 +1,27 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Index Core</title>
-</head>
-<body>
-    {{mensagem}}
-</body>
-</html>
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+{% block menu %}
+    <ul class="nav">
+        <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">Active</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link disabled">Disabled</a>
+        </li>
+    </ul>
+{% endblock menu %}
+{% block main %}
+<div class="row">
+    <div class="col">
+        <h1>Sejam Bem Vindos</h1>
+        <a href="/admin/login/?next=/admin/">Clique aqui para login</a>
+    </div>
+</div>
+{% endblock %}

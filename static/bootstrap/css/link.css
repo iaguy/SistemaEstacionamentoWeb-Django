@@ -19,3 +19,7 @@ th a:hover{
     background-color: aquamarine;
     border-radius: 5px;
 }
+
+img{
+    max-width: 150px;
+}

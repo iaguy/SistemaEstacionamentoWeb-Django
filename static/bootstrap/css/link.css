@@ -1,9 +1,9 @@
-td a{
+td a, p a{
     text-decoration: none;
     color: unset;
 }
 
-td a:hover{
+td a:hover, p a:hover{
     color: rgb(0, 0, 0);
     background-color: aquamarine;
     border-radius: 5px;
@@ -22,4 +22,10 @@ th a:hover{
 
 img{
     max-width: 150px;
+    align-items: center;
+}
+
+.confdiv{
+    text-align: center;
+    padding: 175px;
 }

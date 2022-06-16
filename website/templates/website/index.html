@@ -1,6 +1,32 @@
 {% extends 'website/base.html'%}
 {% load static %}
 {% block main %}
+{% block menu %}
+<div class="row">
+    <div class="col-12">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'website_home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'website_servicos' %}">Serviços</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'website_sobre' %}">Sobre</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'website_planos' %}"> Planos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'website_contato' %}">Contatos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">Sistema</a>
+              </li>
+          </ul>
+    </div>
+</div>
+{% endblock menu %}
     <div class="row">
         <div class="col-6 confdiv">
             <p>Mussum Ipsum, cacilds vidis litro abertis. Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio.Casamentiss faiz malandris se pirulitá.Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.Paisis, filhis, espiritis santis.</p>

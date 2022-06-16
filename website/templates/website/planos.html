@@ -1,6 +1,32 @@
 {% extends 'website/base.html' %}
 {% load static %}
 {% block main %}
+{% block menu %}
+<div class="row">
+    <div class="col-12">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="{% url 'website_home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'website_servicos' %}">Serviços</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'website_sobre' %}">Sobre</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'website_planos' %}"> Planos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'website_contato' %}">Contatos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">Sistema</a>
+              </li>
+          </ul>
+    </div>
+</div>
+{% endblock menu %}
 <div class="row">
     <div class="col-12">
         <p>Mussum Ipsum, cacilds vidis litro abertis. Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Quem num gosta di mim que vai caçá sua turmis!Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis.Diuretics paradis num copo é motivis de denguis.
@@ -19,5 +45,4 @@
     <div class="col-6">
         <img src="{% static 'img/logo.png' %}" alt="Logo Estacionamento" class="imgplano mx-auto d-block">
     </div>
-
 {% endblock main %}

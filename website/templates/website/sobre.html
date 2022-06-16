@@ -1,6 +1,32 @@
 {% extends 'website/base.html' %}
 {% load static %}
 {% block main %}
+{% block menu %}
+<div class="row">
+    <div class="col-12">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="{% url 'website_home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'website_servicos' %}">Serviços</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'website_sobre' %}">Sobre</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'website_planos' %}"> Planos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'website_contato' %}">Contatos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">Sistema</a>
+              </li>
+          </ul>
+    </div>
+</div>
+{% endblock menu %}
 <h1>Conheça a Nossa História</h1>
 <h2>Saiba mais sobre nós</h2>
 <div class="row">

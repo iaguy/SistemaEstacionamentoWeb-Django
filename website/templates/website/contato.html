@@ -1,6 +1,32 @@
 {% extends 'website/base.html' %}
 {% load static %}
 {% block main %}
+{% block menu %}
+<div class="row">
+    <div class="col-12">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="{% url 'website_home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'website_servicos' %}">Serviços</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'website_sobre' %}">Sobre</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'website_planos' %}"> Planos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="{% url 'website_contato' %}">Contatos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">Sistema</a>
+              </li>
+          </ul>
+    </div>
+</div>
+{% endblock menu %}
     <div class="row confdiv">
         <div class="col-6">
             <form class="row g-3">
@@ -75,7 +101,4 @@
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20045917.328245852!2d-69.83127514316266!3d25.076140211441693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89451ab5034cb7ab%3A0xb600ecf3df7aca4d!2sTri%C3%A2ngulo%20das%20Bermudas!5e1!3m2!1spt-BR!2sbr!4v1655401098496!5m2!1spt-BR!2sbr" width="600" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>  
     </div>
-
-
-
 {% endblock main %}

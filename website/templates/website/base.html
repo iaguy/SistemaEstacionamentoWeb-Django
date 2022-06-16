@@ -12,8 +12,19 @@
 </head>
 <body>
     <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h1>Estacionamento 24h</h1>
+                <span>Slogan da Empresa</span>
+            </div>
+            <div class="col-6">
+                <img src="{% static 'img/logo.png' %}" alt="Logo Estacionamento">
+            </div>
+        </div>
+        {% include 'website/menu.html' %}
         {% block main %}
         {% endblock main %}
+        {% include 'website/footer.html' %}
     </div>
 </body>
 </html>

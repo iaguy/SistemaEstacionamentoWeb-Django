@@ -10,5 +10,6 @@ Sistema Web feito em django com site experimental com sistema de login pelo mesm
 
 -- rode o comando "python manage.py runserver" e teste-o
 
-
-PROJETO AINDA NAO TERMINADO
+login do sistema: iaguy
+        
+senha: 12345

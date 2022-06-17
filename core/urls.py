@@ -21,6 +21,7 @@ from .views import (
     movrotativo_delete,
     mensalista_delete,
     movmensal_delete,
+    Pdf,
 )
 
 urlpatterns = [
@@ -50,4 +51,6 @@ urlpatterns = [
     path('mov-mensal-novo/', movmensalista_novo, name='core_movmensalista_novo'),
     path('mov-mensal-update/<int:id>/', movmensalista_update, name='core_movmensalistas_update'),
     path('mov-mensal-delete/<int:id>/', movmensal_delete, name='core_movmensal_delete'),
+
+    path('relatorio/', Pdf.as_view(), name='relatorio_pdf'),
 ]

@@ -28,35 +28,37 @@
 </div>
 {% endblock menu %}
     <div class="row confdiv">
+        <div class="container">{{mensagem}}</div>
         <div class="col-6">
-            <form class="row g-3">
+            <form method="POST" class="row g-3">
+                {% csrf_token %}
                 <div class="col-6">
                     <label for="inputAddress" class="form-label">Nome</label>
-                    <input type="text" class="form-control" id="inputAddress">
+                    <input type="text" class="form-control" id="inputAddress" name="nome">
                 </div>
                 <div class="col-6">
                     <label for="inputAddress" class="form-label">Sobrenome</label>
-                    <input type="text" class="form-control" id="inputAddress">
+                    <input type="text" class="form-control" id="inputAddress" name="sobrenome">
                 </div>
                 <div class="col-md-12">
                     <label for="inputEmail4" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="inputEmail4">
+                    <input type="email" class="form-control" id="inputEmail4" name="email">
                 </div>
                 <div class="col-12">
                     <label for="inputAddress" class="form-label">Endereço</label>
-                    <input type="text" class="form-control" id="inputAddress">
+                    <input type="text" class="form-control" id="inputAddress" name="endereco">
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Fale Conosco</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" name="faleconosco" rows="3"></textarea>
                   </div>
                 <div class="col-md-6">
                     <label for="inputCity" class="form-label">Cidade</label>
-                    <input type="text" class="form-control" id="inputCity">
+                    <input type="text" class="form-control" id="inputCity" name="cidade">
                 </div>
                 <div class="col-md-4">
                     <label for="inputState" class="form-label">Estado</label>
-                    <select id="inputState" class="form-select">
+                    <select id="inputState" class="form-select" name="estado">
                     <option selected>Choose...</option>
                     <option>Acre (AC)</option>
                     <option>Amapá (AP)</option>
@@ -88,10 +90,10 @@
                 </div>
                 <div class="col-md-2">
                     <label for="inputZip" class="form-label">CEP</label>
-                    <input type="text" class="form-control" id="inputZip">
+                    <input type="text" class="form-control" id="inputZip" name="cep">
                 </div>
                 <div class="col-12">
-                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    <button type="submit" class="btn btn-primary" >Enviar</button>
                 </div>
             </form>
         </div>

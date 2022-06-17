@@ -1,3 +1,6 @@
+from asyncore import write
+from csv import writer
+import csv
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
@@ -5,6 +8,7 @@ from django.views.generic.base import View
 from django.template.loader import get_template
 import xhtml2pdf.pisa as pisa
 import io
+
 from .models import (
     Pessoa,
     Veiculo,
@@ -222,9 +226,11 @@ class Render:
         template = get_template(path)
         html = template.render(params)
         response = io.BytesIO()
-        pdf = pisa.pisaDocument(io.BytesIO(html.encode("UTF-8")), response)
+        pdf = pisa.pisaDocument(
+            io.BytesIO(html.encode("UTF-8")), response)
         if not pdf.err:
-            response = HttpResponse(response.getvalue(), content_type='application/pdf')
+            response = HttpResponse(
+                response.getvalue(), content_type='application/pdf')
             response['Content-Disposition'] = 'attachment;filename=%s.pdf' % filename
             return response
         else:
@@ -239,4 +245,23 @@ class Pdf(View):
             'veiculos': veiculos,
             'request': request,
         }
-        return Render.render('core/relatorio.html', params, 'Relatorio_Veiculos')
+        return Render.render('core/relatorio.html', params, 'relatorio_veiculos')
+
+
+class ExportarParaCSV(View):
+    def get(self, request):
+        response = HttpResponse(content_type='text/csv')
+        response['Content-Disposition'] = 'attachment; filename="somefilename.csv"'
+
+        veiculos = Veiculo.objects.all()
+
+        writer = csv.writer(response)
+        writer.writerow(['Id', 'Marca', 'placa', 'Proprietario', 'Cor'])
+
+        for veiculo in veiculos:
+            writer.writerow(
+                [veiculo.id, veiculo.marca, veiculo.placa, veiculo.proprietario,
+                 veiculo.cor
+                 ])
+
+        return response

@@ -1,12 +1,10 @@
 from pathlib import Path
-from decouple import config
-
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = 'django-insecure-f=avls$tzy%y#h&$hux+0@a6rsu_w%oa#b(&nm+=r8n@%q8w#&'
 
-DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -87,7 +85,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'pt-br'
 
-TIME_ZONE = 'America/Sao_paulo'
+TIME_ZONE = 'America/Sao_Paulo'
 
 USE_I18N = True
 
